@@ -1,0 +1,14 @@
+# kkn-otus-devops_infra
+kkn-otus-devops Infra repository
+
+bastion_IP = 35.234.79.34
+someinternalhost_IP = 10.156.0.3
+
+Самостоятельное задание №1
+----------------------------
+Подключение к someinternalhost в одну команду:
+
+ssh -A  kondratukkn@35.234.79.34 ssh -tt 10.156.0.3
+
+Дополнительное задание №1
+ssh -A  kondratukkn@35.234.79.34 ssh -tt 10.156.0.3
