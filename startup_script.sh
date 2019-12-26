@@ -3,6 +3,11 @@
 #Update system
 sudo apt-get update && sudo apt-get upgrade -y
 
+#-----------------Install Ruby----------------------------
+sudo apt install -y ruby-full ruby-bundler build-essential
+
+
+#-----------------Install MongoDB-------------------------
 #Import the MongoDB public GPG key for package signing:
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 
@@ -20,3 +25,13 @@ sudo systemctl start mongod
 
 #Add MongoDB to start on boot
 sudo systemctl enable mongod
+
+
+#-----------------Install APP-----------------------------
+#Clone git repo
+git clone -b monolith https://github.com/express42/reddit.git
+
+#Change directory to reddit repo (cd reddit)
+#Compiling and configuring all dependencies (bundle install)
+#Start app (puma -d)
+cd reddit && bundle install && puma -d

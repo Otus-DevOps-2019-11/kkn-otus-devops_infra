@@ -76,5 +76,20 @@ testapp_port = 9292
 3.3 Деплоя и запуска приложения (deploy.sh)
 
 4. Доплнительное задание 1
+4.1 Написанные скрипты объеденены в один скрипт startup_script.sh
+    Скрипт запускается при создании инстанса.
+    Модификация команды gcloud:
+    (добавлена опция
+      --metadata-from-file startup-script=startup_script.sh)
+
+    gcloud compute instances create reddit-app\
+      --boot-disk-size=10GB \
+      --image-family ubuntu-1604-lts \
+      --image-project=ubuntu-os-cloud \
+      --machine-type=f1-micro \
+      --tags puma-server \
+      --restart-on-failure \
+      --metadata-from-file startup-script=startup_script.sh
+
 
 5. Дополнительное задание 2
