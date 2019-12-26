@@ -56,3 +56,25 @@ ssh -A  kondratukkn@10.156.0.3
 Done
 
 https://35.234.79.34.xip.io
+
+
+===================================================
+
+Homework 6. Cloud-testapp
+
+testapp_IP = 35.234.79.34
+testapp_port = 9292
+
+
+1. Установлено Google Cloud SDK
+
+2. Создана VM через gcloud cli
+
+3. Написаны скрипты для
+3.1 Установки ruby (install_ruby.sh)
+3.2 Установки mongodb (install_mongodb.sh)
+3.3 Деплоя и запуска приложения (deploy.sh)
+
+4. Доплнительное задание 1
+
+5. Дополнительное задание 2
