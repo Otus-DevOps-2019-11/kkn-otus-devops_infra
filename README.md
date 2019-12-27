@@ -62,7 +62,7 @@ https://35.234.79.34.xip.io
 
 Homework 6. Cloud-testapp
 
-testapp_IP = 35.234.79.34
+testapp_IP = 35.242.236.225
 testapp_port = 9292
 
 
