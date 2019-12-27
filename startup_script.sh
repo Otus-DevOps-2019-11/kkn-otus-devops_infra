@@ -15,8 +15,9 @@ sudo apt install -y ruby-full ruby-bundler build-essential
 #echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 
 #Fix for Travis tests
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-sudo bash -c 'echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list'
+echo 'deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse' | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+
 
 #Update repositories. This allows apt to read from the newly added MongoDB repo
 sudo apt-get update
