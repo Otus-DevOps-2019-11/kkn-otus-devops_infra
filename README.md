@@ -56,3 +56,50 @@ ssh -A  kondratukkn@10.156.0.3
 Done
 
 https://35.234.79.34.xip.io
+
+
+===================================================
+
+Homework 6. Cloud-testapp
+
+testapp_IP = 35.242.236.225
+testapp_port = 9292
+
+
+1. Установлено Google Cloud SDK
+
+2. Создана VM через gcloud cli
+
+3. Написаны скрипты для
+3.1 Установки ruby (install_ruby.sh)
+3.2 Установки mongodb (install_mongodb.sh)
+3.3 Деплоя и запуска приложения (deploy.sh)
+
+4. Доплнительное задание 1
+4.1 Написанные скрипты объеденены в один скрипт startup_script.sh
+    Скрипт запускается при создании инстанса.
+    Модификация команды gcloud:
+    (добавлена опция
+      --metadata-from-file startup-script=startup_script.sh)
+
+    gcloud compute instances create reddit-app\
+      --boot-disk-size=10GB \
+      --image-family ubuntu-1604-lts \
+      --image-project=ubuntu-os-cloud \
+      --machine-type=f1-micro \
+      --tags puma-server \
+      --restart-on-failure \
+      --metadata-from-file startup-script=startup_script.sh
+
+
+5. Дополнительное задание 2
+   Команда gcloud для создания правила firewall:
+
+   gcloud compute firewall-rules create default-puma-server \
+     --direction=INGRESS \
+     --priority=1000 \
+     --network=default \
+     --action=ALLOW \
+     --rules=tcp:9292 \
+     --source-ranges=0.0.0.0/0 \
+     --target-tags=puma-server
