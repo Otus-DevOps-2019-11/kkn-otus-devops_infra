@@ -1,5 +1,10 @@
 variables.json
-variables.json.save
 variables.json.old
 *.swp
 *.bkp
+*.save
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
