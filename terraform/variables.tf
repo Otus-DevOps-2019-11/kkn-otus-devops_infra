@@ -23,3 +23,13 @@ variable projectzone {
   description = "Project Zone"
   default     = "europe-west3-a"
 }
+
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default = "reddit-app-base"
+}
+
+variable db_disk_image {
+  description = "Disk image for reddit DB"
+  default = "reddit-db-base"
+}
