@@ -6,7 +6,7 @@ variable zone {
   description = "Project Zone"
 }
 
-variable db_disk_image {
-  description = "Disk image for reddit DB"
-  default = "reddit-db-base"
+variable app_disk_image {
+  description = "Disk image for reddit app"
+  default = "reddit-app-base"
 }

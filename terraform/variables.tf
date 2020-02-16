@@ -19,7 +19,7 @@ variable provisioners_ssh_key {
   description = "private SSH key for provisioners"
 }
 
-variable projectzone {
+variable zone {
   description = "Project Zone"
   default     = "europe-west3-a"
 }
