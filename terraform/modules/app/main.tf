@@ -22,22 +22,22 @@ resource "google_compute_instance" "app" {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 
-#  connection {
-#    type        = "ssh"
-#    host        = self.network_interface[0].access_config[0].nat_ip
-#    user        = "appuser"
-#    agent       = false
-#    private_key = file(var.provisioners_ssh_key)
-#  }
+  #  connection {
+  #    type        = "ssh"
+  #    host        = self.network_interface[0].access_config[0].nat_ip
+  #    user        = "appuser"
+  #    agent       = false
+  #    private_key = file(var.provisioners_ssh_key)
+  #  }
 
-#  provisioner "file" {
-#    source      = "files/puma.service"
-#    destination = "/tmp/puma.service"
-#  }
+  #  provisioner "file" {
+  #    source      = "files/puma.service"
+  #    destination = "/tmp/puma.service"
+  #  }
 
-#  provisioner "remote-exec" {
-#    script = "files/deploy.sh"
-#  }
+  #  provisioner "remote-exec" {
+  #    script = "files/deploy.sh"
+  #  }
 
 
 }
