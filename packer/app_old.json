@@ -7,13 +7,13 @@
         {
             "type": "googlecompute",
             "project_id": "{{user `project_id`}}",
-            "image_name": "reddit-db-base-{{timestamp}}",
-            "image_family": "reddit-db-base",
+            "image_name": "reddit-app-base-{{timestamp}}",
+            "image_family": "reddit-app-base",
             "source_image_family": "{{user `source_image_family`}}",
             "zone": "europe-west3-a",
             "ssh_username": "kondratukkn",
             "machine_type": "{{user `machine_type`}}",
-            "image_description": "reddit db image",
+            "image_description":"{{user `image_description`}}",
             "disk_type":"{{user `disk_type`}}",
             "disk_size":"{{user `disk_size`}}",
             "network":"{{user `network`}}" ,
@@ -22,8 +22,9 @@
     ],
     "provisioners": [
         {
-            "type": "ansible",
-            "playbook_file": "ansible/packer_db.yml"
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
         }
     ]
 }
