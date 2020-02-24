@@ -8,3 +8,4 @@ variables.json.old
 *.tfstate.backup
 *.tfvars
 .terraform/
+*.retry
