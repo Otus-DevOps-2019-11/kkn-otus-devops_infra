@@ -22,24 +22,6 @@ resource "google_compute_instance" "app" {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
 
-  #  connection {
-  #    type        = "ssh"
-  #    host        = self.network_interface[0].access_config[0].nat_ip
-  #    user        = "appuser"
-  #    agent       = false
-  #    private_key = file(var.provisioners_ssh_key)
-  #  }
-
-  #  provisioner "file" {
-  #    source      = "files/puma.service"
-  #    destination = "/tmp/puma.service"
-  #  }
-
-  #  provisioner "remote-exec" {
-  #    script = "files/deploy.sh"
-  #  }
-
-
 }
 
 resource "google_compute_firewall" "firewall_puma" {
@@ -47,7 +29,7 @@ resource "google_compute_firewall" "firewall_puma" {
   network = "default"
   allow {
     protocol = "tcp"
-    ports    = ["9292"]
+    ports    = ["80"]
   }
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["reddit-app"]
